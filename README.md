@@ -70,3 +70,77 @@ MIT License
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-iOS26-Showcase&type=Date" />
  </picture>
 </a>
+
+---
+
+## 📋 Table of Contents
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Requirements
+
+| Requirement | Version |
+|-------------|---------|
+| iOS | 18.0+ |
+| Xcode | 16.0+ |
+| Swift | 6.0+ |
+
+## Installation
+
+### Swift Package Manager
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git", from: "1.0.0")
+]
+```
+
+### CocoaPods
+
+```ruby
+pod 'SwiftUIiOS26Showcase', '~> 1.0'
+```
+
+## Quick Start
+
+```swift
+import SwiftUIiOS26Showcase
+
+struct ContentView: View {
+    var body: some View {
+        iOS26FeatureShowcase()
+    }
+}
+```
+
+## Documentation
+
+| Guide | Description |
+|-------|-------------|
+| [Getting Started](Documentation/GettingStarted.md) | First steps |
+| [New Features](Documentation/NewFeatures.md) | iOS 26 features |
+| [Migration Guide](Documentation/Migration.md) | From iOS 17/18 |
+
+## Contributing
+
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+MIT License - see [LICENSE](LICENSE).
+
+---
+
+<div align="center">
+
+**Muhittin Camdali**
+
+[![GitHub](https://img.shields.io/badge/GitHub-muhittincamdali-181717?style=for-the-badge&logo=github)](https://github.com/muhittincamdali)
+
+</div>
