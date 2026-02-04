@@ -1,51 +1,60 @@
-<div align="center">
+<p align="center">
+  <img src="Assets/logo.png" alt="SwiftUI iOS 26 Showcase" width="200"/>
+</p>
 
-# 🎪 SwiftUI-iOS26-Showcase
+<h1 align="center">SwiftUI iOS 26 Showcase</h1>
 
-**50+ iOS 26 new API demos in one app - Liquid Glass, Foundation Models & more**
+<p align="center">
+  <strong>🎪 50+ iOS 26 new API demos in one app - Liquid Glass, Foundation Models & more</strong>
+</p>
 
-[![Swift](https://img.shields.io/badge/Swift-6.0+-F05138?style=for-the-badge&logo=swift&logoColor=white)](https://swift.org)
-[![iOS](https://img.shields.io/badge/iOS-26.0+-000000?style=for-the-badge&logo=apple&logoColor=white)](https://developer.apple.com/ios/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
-</div>
-
----
-
-## ✨ Featured Demos
-
-### 🧊 Liquid Glass
-- Material effects
-- Adaptive tinting
-- Dynamic blur
-
-### 🤖 Foundation Models
-- On-device AI
-- Text generation
-- Image understanding
-
-### 📱 New SwiftUI APIs
-- Enhanced navigation
-- New view modifiers
-- Improved animations
+<p align="center">
+  <img src="https://img.shields.io/badge/iOS-26-blue.svg" alt="iOS 26"/>
+  <img src="https://img.shields.io/badge/Swift-6.0-orange.svg" alt="Swift"/>
+</p>
 
 ---
 
-## 🚀 Getting Started
+## Demos Included
 
-1. Requires Xcode 17 beta
-2. iOS 26 simulator or device
-3. Clone and run
+### Liquid Glass
+- Glass Cards
+- Glass Navigation
+- Glass Tab Bar
+- Glass Sheets
+- Glass Alerts
 
-```swift
-// Example: Liquid Glass
-Text("Hello")
-    .liquidGlass()
-    .adaptiveTint(.blue)
+### Foundation Models
+- Text Generation
+- Summarization
+- Translation
+- Code Completion
+- Image Captioning
+
+### App Intents 2.0
+- Custom Shortcuts
+- Siri Integration
+- Automation Triggers
+
+### Other Features
+- Spatial Audio
+- Vision APIs
+- New SwiftUI Views
+- Enhanced Animations
+
+## Running
+
+```bash
+# Requires Xcode 18 & iOS 26 SDK
+git clone https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
+open SwiftUI-iOS26-Showcase.xcodeproj
+# Run on iOS 26 Simulator
 ```
 
----
+## Contributing
 
-## 📄 License
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-MIT • [@muhittincamdali](https://github.com/muhittincamdali)
+## License
+
+MIT License
