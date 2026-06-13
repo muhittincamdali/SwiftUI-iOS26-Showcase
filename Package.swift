@@ -1,5 +1,4 @@
 // swift-tools-version: 5.9
-
 import PackageDescription
 
 let package = Package(
@@ -12,17 +11,15 @@ let package = Package(
         .visionOS(.v1)
     ],
     products: [
-        .library(
-            name: "SwiftUIiOS26Showcase",
-            targets: ["SwiftUIiOS26Showcase"]
-        )
+        .library(name: "SwiftUIiOS26Showcase", targets: ["SwiftUIiOS26Showcase"]),
     ],
-    dependencies: [],
     targets: [
         .target(
             name: "SwiftUIiOS26Showcase",
-            dependencies: [],
-            path: "Sources/SwiftUIiOS26Showcase"
+            path: "Sources/SwiftUIiOS26Showcase",
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency")
+            ]
         ),
         .testTarget(
             name: "SwiftUIiOS26ShowcaseTests",
