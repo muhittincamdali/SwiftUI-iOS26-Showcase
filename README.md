@@ -6,6 +6,8 @@
 
 ---
 
+## 🚀 Killer Feature: Comprehensive App Gallery
+Don't just read about features—experience them. This repository includes 10 fully functional mini-apps demonstrating the absolute bleeding-edge of iOS 26 UI/UX patterns.
 > **🛡️ PART OF THE 2026 UNIFIED CORE**
 > This repository is a verified component of 'The Endless March' initiative. Purified for Swift 6, zero-dependency, and engineered for maximum hardware saturation.
 > 
