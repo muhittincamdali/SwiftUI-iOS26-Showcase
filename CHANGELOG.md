@@ -25,19 +25,33 @@ documents had been copied from another project.
 - `ShowcaseDemo`, `ShowcaseCategory`, `ShowcasePlatform` and `ShowcaseCatalog` for demo
   metadata, search, grouping and lookup by identifier.
 - Public helpers used by the demos: `WebAddress`, `RichTextFormatter` and `SurfaceFunction`.
-- Swift Testing suites (37 tests in 9 suites) that run on macOS and in the iOS Simulator,
-  including a rendering test for every demo and compiled README examples.
-- An iOS and macOS example app (`Examples/ShowcaseApp`, generated with XcodeGen), a screenshot
+- Swift Testing suites that run on macOS and in the iOS Simulator. They cover catalog search
+  and metadata, the public helpers, compiled README and DocC examples, a check that the README
+  demo table matches the catalog, and a rendering test that every demo draws more than its
+  summary and API list (the two `List`-based demos are not rendered, because `ImageRenderer`
+  does not draw lists).
+- An iOS and macOS example app (`Examples/ShowcaseApp`, created with XcodeGen), a screenshot
   script and simulator screenshots.
-- A DocC catalog with an overview and a getting started article.
+- A DocC catalog with an overview and two articles: getting started, and building your own demo
+  browser with `ShowcaseCatalog`.
+- The section index demo has a picker for `listSectionIndexVisibility(_:)`, and the web view
+  demo lists the APIs it uses, like the other screens.
+- README translations in Turkish, Simplified Chinese, Japanese, Korean, Spanish, German, French,
+  Brazilian Portuguese and Russian, with a language selector, generated banner, badges and
+  buttons, and a social preview image in `.github/brand/`.
 - Swift Package Index configuration.
 
 ### Changed
 
 - Requires Swift 6.2 tools, iOS 26 and macOS 26. watchOS, tvOS and visionOS are no longer
   listed, because none of the demos were built or tested there.
-- CI builds and tests on macOS and the iOS Simulator, builds the example app and the
-  documentation, and no longer ignores test failures.
+- CI calls the shared workflows from `muhittincamdali/.github`: SwiftPM build and test plus
+  xcodebuild for iOS and macOS, DocC published to GitHub Pages, link check, wording check and
+  README translation check. A separate workflow runs the tests in the iOS Simulator and builds
+  the example app. Test failures are no longer ignored.
+- Requires Xcode 26.1 or later, because the tab bar demo uses an iOS 26.1 API.
+- The security policy prefers private vulnerability reporting, and the code of conduct is the
+  shared one from `muhittincamdali/.github`.
 
 ### Removed
 
