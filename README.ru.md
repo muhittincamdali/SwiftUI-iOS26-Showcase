@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
+<!-- i18n-source: README.md@22c67ad6e248ae6060e26c7972b6db4b40db16fa status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ru-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ru-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ru-light.svg" alt="SwiftUI iOS 26 Showcase: Шестнадцать готовых к запуску SwiftUI-демо новых API iOS 26 и macOS 26: от Liquid Glass до Foundation Models."></picture></p>
@@ -60,9 +60,10 @@ API в работе, прежде чем применять их у себя: м
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-В том же окне установите для **Dependency Rule** значение **Branch** и введите `main` (релиз 1.0.0
-вышел раньше этих демо). Нажмите **Add Package**, выберите таргет своего приложения в столбце
-**Add to Target** и ещё раз нажмите **Add Package**.
+В том же окне оставьте для **Dependency Rule** значение по умолчанию, **Up to Next Major
+Version**, начиная с `2.0.0` (более ранний релиз 1.0.0 вышел раньше этих демо). Нажмите
+**Add Package**, выберите таргет своего приложения в столбце **Add to Target** и ещё раз нажмите
+**Add Package**.
 
 **2. Импортируйте модуль**
 
@@ -274,7 +275,6 @@ README и метаданные расходятся, тест падает. Те
 
 ## План развития
 
-- Выпустить релиз 2.0.0, чтобы пакет можно было добавлять по правилу версий, а не по ветке `main`.
 - Добавлять демо для API SwiftUI, которые появятся в следующих обновлениях iOS 26. Предложить
   демо можно через [форму запроса демо](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose).
 

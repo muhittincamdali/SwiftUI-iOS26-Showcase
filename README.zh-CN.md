@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
+<!-- i18n-source: README.md@22c67ad6e248ae6060e26c7972b6db4b40db16fa status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-zh-CN-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-zh-CN-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-zh-CN-light.svg" alt="SwiftUI iOS 26 Showcase: 16 个可运行的 SwiftUI 演示，涵盖 iOS 26 和 macOS 26 新增的 API，从 Liquid Glass 到 Foundation Models。"></picture></p>
@@ -45,7 +45,7 @@ SwiftUI iOS 26 Showcase 是一个 Swift 软件包，包含十六个小型 SwiftU
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-在同一个对话框中，把 **Dependency Rule** 设为 **Branch** 并输入 `main`（1.0.0 版本早于这些演示）。点击 **Add Package**，在 **Add to Target** 一栏中选择你的应用 target，然后再次点击 **Add Package**。
+在同一个对话框中，保留 **Dependency Rule** 的默认值 **Up to Next Major Version**，起始版本为 `2.0.0`（更早的 1.0.0 版本早于这些演示）。点击 **Add Package**，在 **Add to Target** 一栏中选择你的应用 target，然后再次点击 **Add Package**。
 
 **2. 导入模块**
 
@@ -219,7 +219,6 @@ API 参考文档与文章：
 
 ## 路线图
 
-- 发布 2.0.0 标签，使软件包可以按版本规则而不是 `main` 分支添加。
 - 为后续 iOS 26 更新引入的 SwiftUI API 添加演示。可以通过 [演示请求表单](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose)提出建议。
 
 ## 参与贡献

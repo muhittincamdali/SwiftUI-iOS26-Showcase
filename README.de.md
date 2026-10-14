@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
+<!-- i18n-source: README.md@22c67ad6e248ae6060e26c7972b6db4b40db16fa status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-de-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-de-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-de-light.svg" alt="SwiftUI iOS 26 Showcase: Sechzehn lauffähige SwiftUI-Demos der neuen APIs in iOS 26 und macOS 26, von Liquid Glass bis Foundation Models."></picture></p>
@@ -61,9 +61,9 @@ Wähle in Xcode **File › Add Package Dependencies…** und gib die Repository-
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-Stelle im selben Dialog **Dependency Rule** auf **Branch** und gib `main` ein (das Release 1.0.0
-ist älter als diese Demos). Klicke auf **Add Package**, wähle in der Spalte **Add to Target** das
-Target deiner App und klicke noch einmal auf **Add Package**.
+Lass **Dependency Rule** im selben Dialog auf dem Standardwert **Up to Next Major Version** ab
+`2.0.0` (das frühere Release 1.0.0 ist älter als diese Demos). Klicke auf **Add Package**, wähle in
+der Spalte **Add to Target** das Target deiner App und klicke noch einmal auf **Add Package**.
 
 **2. Modul importieren**
 
@@ -280,8 +280,6 @@ aus.
 
 ## Roadmap
 
-- Ein Release 2.0.0 taggen, damit sich das Paket mit einer Versionsregel statt über den Branch
-  `main` hinzufügen lässt.
 - Demos für SwiftUI-APIs ergänzen, die spätere Updates von iOS 26 mitbringen. Vorschläge kannst du
   über das [Formular für Demo-Wünsche](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose)
   einreichen.

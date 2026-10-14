@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
+<!-- i18n-source: README.md@22c67ad6e248ae6060e26c7972b6db4b40db16fa status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-fr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-fr-light.svg" alt="SwiftUI iOS 26 Showcase: Seize démos SwiftUI exécutables des nouvelles API d'iOS 26 et de macOS 26, de Liquid Glass à Foundation Models."></picture></p>
@@ -61,9 +61,10 @@ Dans Xcode, choisissez **File › Add Package Dependencies…** et saisissez l�
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-Dans la même fenêtre, réglez **Dependency Rule** sur **Branch** et saisissez `main` (la version
-1.0.0 est antérieure à ces démos). Cliquez sur **Add Package**, choisissez la cible de votre app
-dans la colonne **Add to Target**, puis cliquez de nouveau sur **Add Package**.
+Dans la même fenêtre, laissez **Dependency Rule** sur sa valeur par défaut, **Up to Next Major
+Version**, à partir de `2.0.0` (l’ancienne version 1.0.0 est antérieure à ces démos). Cliquez
+sur **Add Package**, choisissez la cible de votre app dans la colonne **Add to Target**, puis
+cliquez de nouveau sur **Add Package**.
 
 **2. Importer le module**
 
@@ -279,8 +280,6 @@ la CI lance les deux.
 
 ## Feuille de route
 
-- Publier une version 2.0.0, pour que le paquet puisse être ajouté avec une règle de version
-  plutôt qu’avec la branche `main`.
 - Ajouter des démos pour les API SwiftUI qu’apporteront les prochaines mises à jour d’iOS 26.
   Proposez-en une avec le
   [formulaire de demande de démo](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose).

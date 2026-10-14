@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
+<!-- i18n-source: README.md@22c67ad6e248ae6060e26c7972b6db4b40db16fa status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ja-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ja-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ja-light.svg" alt="SwiftUI iOS 26 Showcase: iOS 26 と macOS 26 の新しい API を試せる 16 個の SwiftUI デモ。Liquid Glass から Foundation Models まで。"></picture></p>
@@ -45,7 +45,7 @@ Xcode で **File › Add Package Dependencies…** を選び、リポジトリ�
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-同じダイアログで **Dependency Rule** を **Branch** にし、`main` と入力します（1.0.0 リリースはこれらのデモより前のものです）。**Add Package** をクリックし、**Add to Target** 列でアプリのターゲットを選んで、もう一度 **Add Package** をクリックします。
+同じダイアログで **Dependency Rule** は既定の **Up to Next Major Version** のままにし、`2.0.0` から始めます（それ以前の 1.0.0 リリースはこれらのデモより前のものです）。**Add Package** をクリックし、**Add to Target** 列でアプリのターゲットを選んで、もう一度 **Add Package** をクリックします。
 
 **2. モジュールをインポートする**
 
@@ -219,7 +219,6 @@ API リファレンスと解説記事：
 
 ## ロードマップ
 
-- `main` ブランチではなくバージョンルールでパッケージを追加できるよう、2.0.0 のリリースタグを付ける。
 - 今後の iOS 26 アップデートで追加される SwiftUI API のデモを追加する。提案は [デモのリクエストフォーム](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose) からお寄せください。
 
 ## コントリビューション

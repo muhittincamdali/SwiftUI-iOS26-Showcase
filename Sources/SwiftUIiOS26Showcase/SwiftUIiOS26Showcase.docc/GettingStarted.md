@@ -10,15 +10,15 @@ The package needs Xcode 26.1 or later and runs on iOS 26 and macOS 26.
    **File > Add Package Dependencies…**.
 2. Paste `https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git`
    into the search field at the top right.
-3. Set **Dependency Rule** to **Branch** and enter `main`. The 1.0.0
-   release predates the demos described here.
+3. Keep the default **Dependency Rule**, **Up to Next Major Version**,
+   from `2.0.0`. The earlier 1.0.0 release predates the demos described here.
 4. Click **Add Package**, choose your app target in the
    **Add to Target** column, and click **Add Package** again.
 
 In a `Package.swift` manifest, add:
 
 ```swift
-.package(url: "https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git", branch: "main")
+.package(url: "https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git", from: "2.0.0")
 ```
 
 and list `"SwiftUIiOS26Showcase"` in your target's dependencies.

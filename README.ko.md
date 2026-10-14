@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
+<!-- i18n-source: README.md@22c67ad6e248ae6060e26c7972b6db4b40db16fa status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ko-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ko-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ko-light.svg" alt="SwiftUI iOS 26 Showcase: iOS 26과 macOS 26의 새 API를 직접 실행해 볼 수 있는 SwiftUI 데모 16개. Liquid Glass부터 Foundation Models까지."></picture></p>
@@ -56,9 +56,9 @@ Xcode에서 **File › Add Package Dependencies…**를 선택하고 저장소 U
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-같은 창에서 **Dependency Rule**을 **Branch**로 바꾸고 `main`을 입력하세요(1.0.0 릴리스는 이 데모들보다
-이전 버전입니다). **Add Package**를 클릭하고 **Add to Target** 열에서 앱 타깃을 고른 뒤 **Add Package**를
-한 번 더 클릭하세요.
+같은 창에서 **Dependency Rule**은 기본값인 **Up to Next Major Version**으로 두고 `2.0.0`부터
+시작하세요(이전 1.0.0 릴리스는 이 데모들보다 이전 버전입니다). **Add Package**를 클릭하고
+**Add to Target** 열에서 앱 타깃을 고른 뒤 **Add Package**를 한 번 더 클릭하세요.
 
 **2. 모듈 가져오기**
 
@@ -264,7 +264,6 @@ Models 데모에서 프롬프트를 보내려면 Apple Intelligence가 켜진 �
 
 ## 로드맵
 
-- `main` 브랜치 대신 버전 규칙으로 패키지를 추가할 수 있도록 2.0.0 릴리스 태그를 붙입니다.
 - 이후 iOS 26 업데이트에서 추가되는 SwiftUI API의 데모를 추가합니다.
   [데모 요청 양식](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose)으로
   제안해 주세요.

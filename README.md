@@ -56,9 +56,9 @@ In Xcode, choose **File › Add Package Dependencies…** and enter the reposito
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-In the same dialog, set **Dependency Rule** to **Branch** and type `main` (the 1.0.0 release
-predates these demos). Click **Add Package**, choose your app target in the **Add to Target**
-column, and click **Add Package** again.
+In the same dialog, keep the default **Dependency Rule**, **Up to Next Major Version**, from
+`2.0.0` (the earlier 1.0.0 release predates these demos). Click **Add Package**, choose your app
+target in the **Add to Target** column, and click **Add Package** again.
 
 **2. Import the module**
 
@@ -268,8 +268,6 @@ and with `xcodebuild test` in the iOS Simulator; CI runs both.
 
 ## Roadmap
 
-- Tag a 2.0.0 release, so the package can be added with a version rule instead of the `main`
-  branch.
 - Add demos for SwiftUI APIs that later iOS 26 updates introduce. Suggest one with the
   [demo request form](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose).
 

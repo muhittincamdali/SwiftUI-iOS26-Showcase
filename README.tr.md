@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
+<!-- i18n-source: README.md@22c67ad6e248ae6060e26c7972b6db4b40db16fa status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-tr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-tr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-tr-light.svg" alt="SwiftUI iOS 26 Showcase: iOS 26 ve macOS 26 ile gelen API'ler için çalıştırılabilir 16 SwiftUI demosu: Liquid Glass'tan Foundation Models'a."></picture></p>
@@ -60,9 +60,10 @@ Xcode'da **File › Add Package Dependencies…** menüsünü seçin ve depo adr
 https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
 ```
 
-Aynı pencerede **Dependency Rule** ayarını **Branch** yapın ve `main` yazın (1.0.0 sürümü bu
-demolardan öncesine aittir). **Add Package** düğmesine tıklayın, **Add to Target** sütununda
-uygulama hedefinizi seçin ve yeniden **Add Package** düğmesine tıklayın.
+Aynı pencerede **Dependency Rule** ayarını varsayılan değerinde, `2.0.0` sürümünden başlayan
+**Up to Next Major Version** olarak bırakın (daha önceki 1.0.0 sürümü bu demolardan öncesine
+aittir). **Add Package** düğmesine tıklayın, **Add to Target** sütununda uygulama hedefinizi seçin
+ve yeniden **Add Package** düğmesine tıklayın.
 
 **2. Modülü içe aktarın**
 
@@ -276,8 +277,6 @@ Simulator'da `xcodebuild test` ile çalışır; CI ikisini de çalıştırır.
 
 ## Yol haritası
 
-- Paketin `main` dalı yerine bir sürüm kuralıyla eklenebilmesi için 2.0.0 sürümünü
-  etiketlemek.
 - Sonraki iOS 26 güncellemelerinin getirdiği SwiftUI API'leri için demolar eklemek.
   [Demo isteği formuyla](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/issues/new/choose)
   öneride bulunabilirsiniz.
