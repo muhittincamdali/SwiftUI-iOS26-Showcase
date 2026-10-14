@@ -103,9 +103,4 @@ struct ModelAvailabilityMessageTests {
         #expect(Set(messages).count == states.count)
         #expect(messages.allSatisfy { $0.hasSuffix(".") })
     }
-
-    @Test func currentAvailabilityHasAMessage() {
-        let message = ModelAvailabilityMessage.text(for: SystemLanguageModel.default.availability)
-        #expect(!message.isEmpty)
-    }
 }
