@@ -28,10 +28,13 @@ private struct ChartScreen: View {
 @Suite("README examples")
 @MainActor
 struct ReadmeExamplesTests {
-    @Test func galleryAndDemoViewsBuild() {
+    /// These snippets are checked mostly by compiling; the expectation covers the
+    /// demo that `ChartScreen` passes to `ShowcaseDemoView`.
+    @Test func galleryAndDemoSnippets() {
         _ = DemoApp().body
         _ = ChartScreen().body
         _ = ShowcaseGallery(initialDemo: .chart3D)
+        #expect(ShowcaseDemoView(.chart3D).demo == .chart3D)
     }
 
     @Test func catalogExample() {
