@@ -2,6 +2,10 @@
 
 Thanks for helping with SwiftUI iOS 26 Showcase. Bug reports, fixes and new demos are welcome.
 
+The [shared contributing guide](https://github.com/muhittincamdali/.github/blob/main/CONTRIBUTING.md)
+covers branches, commit messages and README translations for all of these repositories. This
+file adds the steps that are specific to this package.
+
 ## Before you start
 
 For a new demo, open an issue first and name the iOS 26 or macOS 26 API it covers. Each demo
@@ -51,7 +55,8 @@ Xcode project with `xcodegen generate --spec project.yml` from that folder.
 
 ## Code of conduct
 
-This project follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+This project follows the
+[shared code of conduct](https://github.com/muhittincamdali/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
