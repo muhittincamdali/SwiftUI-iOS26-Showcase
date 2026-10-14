@@ -15,8 +15,18 @@ struct SectionIndexDemo: View {
     .sorted { $0.key < $1.key }
     .map { (letter: $0.key, names: $0.value.sorted()) }
 
+    @State private var indexVisibility: Visibility = .visible
+
     var body: some View {
         List {
+            Section {
+                Picker("Section index", selection: $indexVisibility) {
+                    Text("Automatic").tag(Visibility.automatic)
+                    Text("Visible").tag(Visibility.visible)
+                    Text("Hidden").tag(Visibility.hidden)
+                }
+                .pickerStyle(.segmented)
+            }
             ForEach(Self.sections, id: \.letter) { section in
                 Section(section.letter) {
                     ForEach(section.names, id: \.self) { name in
@@ -29,7 +39,7 @@ struct SectionIndexDemo: View {
                 APIList(demo: .sectionIndex)
             }
         }
-        .listSectionIndexVisibility(.visible)
+        .listSectionIndexVisibility(indexVisibility)
     }
 }
 
