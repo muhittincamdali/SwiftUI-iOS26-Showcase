@@ -1,3 +1,4 @@
+# Managed by the repository kit (muhittincamdali/.github). Edit the inputs, keep the structure.
 name: CI
 
 on:
@@ -6,71 +7,12 @@ on:
   pull_request:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+permissions: {}
 
 jobs:
-  test-macos:
-    name: Test (macOS)
-    runs-on: macos-26
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Toolchain
-        run: xcodebuild -version && swift --version
-      - name: Build
-        run: swift build
-      - name: Test
-        run: swift test
-
-  test-ios:
-    name: Test (iOS Simulator)
-    runs-on: macos-26
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Pick a simulator
-        id: sim
-        run: |
-          udid=$(xcrun simctl list devices available --json \
-            | python3 -c 'import json,sys; d=json.load(sys.stdin)["devices"]; print(next(x["udid"] for k,v in d.items() if "iOS" in k for x in v if x["name"].startswith("iPhone")))')
-          echo "udid=$udid" >> "$GITHUB_OUTPUT"
-      - name: Test
-        run: |
-          xcodebuild test \
-            -scheme SwiftUIiOS26Showcase \
-            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.udid }}"
-
-  example-and-docs:
-    name: Example app and documentation
-    runs-on: macos-26
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Build example app (iOS Simulator)
-        run: |
-          xcodebuild build \
-            -project Examples/ShowcaseApp/ShowcaseApp.xcodeproj \
-            -scheme ShowcaseApp \
-            -destination "generic/platform=iOS Simulator"
-      - name: Build example app (macOS)
-        run: |
-          xcodebuild build \
-            -project Examples/ShowcaseApp/ShowcaseApp.xcodeproj \
-            -scheme ShowcaseApp \
-            -destination "platform=macOS"
-      - name: Build documentation
-        run: |
-          set -o pipefail
-          xcodebuild docbuild \
-            -scheme SwiftUIiOS26Showcase \
-            -destination "generic/platform=iOS Simulator" \
-            -derivedDataPath .build/docs 2>&1 | tee docbuild.log
-          if grep -q "warning:" docbuild.log; then
-            echo "::error::DocC reported warnings"
-            exit 1
-          fi
+  swift:
+    permissions:
+      contents: read
+    uses: muhittincamdali/.github/.github/workflows/swift-ci.yml@5d3c4432dae8895b16ce3caa2f78398966953212 # v1
+    with:
+      platforms: '["iOS","macOS"]'
