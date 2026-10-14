@@ -26,6 +26,7 @@ the heights for the 3D chart.
 ### Essentials
 
 - <doc:GettingStarted>
+- <doc:BuildingADemoBrowser>
 - ``ShowcaseGallery``
 - ``ShowcaseDemoView``
 

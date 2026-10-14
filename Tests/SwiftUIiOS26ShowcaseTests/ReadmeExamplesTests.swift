@@ -25,6 +25,40 @@ private struct ChartScreen: View {
     }
 }
 
+// MARK: - DocC: Building a Demo Browser
+
+private struct DemoBrowser: View {
+    private let catalog = ShowcaseCatalog()
+    @State private var selection: ShowcaseDemo?
+    @State private var query = ""
+
+    var body: some View {
+        NavigationSplitView {
+            List(selection: $selection) {
+                ForEach(catalog.sections(matching: query)) { section in
+                    Section(section.category.title) {
+                        ForEach(section.demos) { demo in
+                            Label(demo.title, systemImage: demo.systemImage)
+                                .tag(demo)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Demos")
+            .searchable(text: $query)
+        } detail: {
+            if let selection {
+                ShowcaseDemoView(selection)
+            } else {
+                ContentUnavailableView("Select a demo", systemImage: "sparkles")
+            }
+        }
+        .onOpenURL { url in
+            selection = catalog.demo(withID: url.lastPathComponent)
+        }
+    }
+}
+
 @Suite("README examples")
 @MainActor
 struct ReadmeExamplesTests {
@@ -53,6 +87,18 @@ struct ReadmeExamplesTests {
         let matches = catalog.demos(matching: "glass button")
         // [.glassButtons]
         #expect(matches == [.glassButtons])
+    }
+
+    @Test func demoBrowserExamples() {
+        _ = DemoBrowser().body
+
+        let catalog = ShowcaseCatalog(platform: .macOS)
+        #expect(catalog.demo(withID: "chart3D") == .chart3D)
+        #expect(catalog.demo(withID: "sectionIndex") == nil)
+        #expect(catalog.demo(withID: "unknown") == nil)
+        #expect(ShowcaseDemo.allCases.filter { !$0.isAvailable(on: .macOS) } == [.tabBarMinimize, .sectionIndex])
+        #expect(catalog.demos.count == 14)
+        #expect(ShowcaseCatalog(platform: .iOS).demos.count == 16)
     }
 
     @Test func helperExamples() {
