@@ -51,6 +51,10 @@ struct RenderingTests {
 
     /// Each demo must lay out and draw more than a page that has only the same
     /// summary and API list, so a demo whose own content is empty fails.
+    ///
+    /// The check is only as strong as what `ImageRenderer` draws, and it does not
+    /// draw `WebView`. For the web view demo the extra pixels come from the address
+    /// and status bars, so the test passes even without the `WebView` itself.
     @Test(arguments: ShowcaseCatalog().demos.filter { !Self.listDemos.contains($0) })
     func demoDrawsItsOwnContent(demo: ShowcaseDemo) throws {
         let page = try render(ShowcaseDemoView(demo))
