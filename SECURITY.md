@@ -1,15 +1,23 @@
-# Security Policy
+# Security policy
+
+This repository follows the [shared security policy](https://github.com/muhittincamdali/.github/blob/main/SECURITY.md).
+The short version is below, followed by what is in scope for this package.
 
 ## Supported versions
 
-Security fixes are made on the `main` branch.
+Security fixes are made on the `main` branch and go into the next release.
 
 ## Reporting a vulnerability
 
-Please do not open a public issue for a security problem. Email muhittincamdali@gmail.com
-instead.
+Please report vulnerabilities privately, not in a public issue, pull request or discussion.
 
-Include the affected file or API, steps to reproduce, and what an attacker could do with it.
+1. **Preferred:** open the repository's **Security** tab and choose
+   **Report a vulnerability** ([how private reporting works](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/report-privately)).
+2. **Or** email [muhittincamdali@gmail.com](mailto:muhittincamdali@gmail.com) with
+   "Security" in the subject.
+
+Include the affected file or API, the version (tag or commit), steps to reproduce, and what an
+attacker could do with it. You get a reply within 7 days confirming that the report arrived.
 
 ## Scope
 
