@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-10-14
+
 The package was rebuilt around runnable demos. Since June 2026 it had contained only
 placeholders: "enterprise" helpers (circuit breaker, retry policy, event bus) unrelated to
 SwiftUI, a gallery whose only behaviour was a `print` call, and a test file referencing types
 that did not exist, so the tests never compiled. The previous changelog and contributor
-documents had been copied from another project.
+documents had been copied from another project. Because the earlier public types are removed,
+this release is a new major version.
 
 ### Added
 
@@ -52,6 +55,8 @@ documents had been copied from another project.
   README translation check. A separate workflow runs the tests in the iOS Simulator and builds
   the example app. Test failures are no longer ignored.
 - Requires Xcode 26.1 or later, because the tab bar demo uses an iOS 26.1 API.
+- The README and the getting started article add the package from 2.0.0 instead of the `main`
+  branch.
 - The security policy prefers private vulnerability reporting, and the code of conduct is the
   shared one from `muhittincamdali/.github`.
 
@@ -65,5 +70,6 @@ documents had been copied from another project.
 
 First tagged version.
 
-[Unreleased]: https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/releases/tag/v1.0.0
