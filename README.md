@@ -39,8 +39,10 @@ your own app.
 - **One screen at a time**: `ShowcaseDemoView(.chart3D)` puts a single demo into your own
   navigation.
 - **Tested on macOS and in the iOS Simulator**: Swift Testing suites check the catalog, the
-  helper types, that every demo draws its own content, and that the demo table below matches
-  the code.
+  helper types and that the demo table below matches the code. A rendering test checks that
+  each demo draws more than its summary and API list, as far as `ImageRenderer` can draw it: the
+  two `List`-based demos are skipped, and in the web view demo the test sees the address and
+  status bars but not the `WebView`.
 - **Example app**: an iOS and macOS app in [Examples/ShowcaseApp](Examples/ShowcaseApp) that
   can open any demo from a launch argument.
 

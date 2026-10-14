@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-zh-CN-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-zh-CN-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-zh-CN-light.svg" alt="SwiftUI iOS 26 Showcase: 16 个可运行的 SwiftUI 演示，涵盖 iOS 26 和 macOS 26 新增的 API，从 Liquid Glass 到 Foundation Models。"></picture></p>
@@ -32,7 +32,7 @@ SwiftUI iOS 26 Showcase 是一个 Swift 软件包，包含十六个小型 SwiftU
 - **6 个类别中的 16 个演示**：Liquid Glass、栏与导航、滚动与布局、文本与网页、图表与符号，以及 Apple Intelligence。其中 14 个也能在 macOS 上运行。
 - **可搜索的演示库**：`ShowcaseGallery` 列出当前平台可用的演示，搜索会匹配标题、摘要和 API 名称。
 - **一次一个界面**：`ShowcaseDemoView(.chart3D)` 可以把单个演示放进你自己的导航结构中。
-- **在 macOS 和 iOS Simulator 上测试**：Swift Testing 测试套件会检查目录、辅助类型、每个演示是否绘制了自己的内容，以及下方的演示表格是否与代码一致。
+- **在 macOS 和 iOS Simulator 上测试**：Swift Testing 测试套件会检查目录、辅助类型，以及下方的演示表格是否与代码一致。渲染测试会在 `ImageRenderer` 能绘制的范围内，检查每个演示绘制的内容是否多于其摘要和 API 列表：两个基于 `List` 的演示会被跳过；在 **WebView** 演示中，测试能看到地址栏和状态栏，但看不到 `WebView` 本身。
 - **示例应用**：[Examples/ShowcaseApp](Examples/ShowcaseApp) 中有一个 iOS 和 macOS 应用，可以通过启动参数打开任意演示。
 
 ## 快速开始

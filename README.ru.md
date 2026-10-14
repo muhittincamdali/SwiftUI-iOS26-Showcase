@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ru-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ru-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ru-light.svg" alt="SwiftUI iOS 26 Showcase: Шестнадцать готовых к запуску SwiftUI-демо новых API iOS 26 и macOS 26: от Liquid Glass до Foundation Models."></picture></p>
@@ -43,8 +43,10 @@ API в работе, прежде чем применять их у себя: м
 - **Один экран отдельно**: `ShowcaseDemoView(.chart3D)` встраивает одно демо в вашу собственную
   навигацию.
 - **Тесты на macOS и в iOS Simulator**: наборы тестов на Swift Testing проверяют каталог,
-  вспомогательные типы, то, что каждое демо рисует собственное содержимое, и то, что таблица демо
-  ниже совпадает с кодом.
+  вспомогательные типы и то, что таблица демо ниже совпадает с кодом. Тест отрисовки проверяет,
+  что каждое демо рисует больше, чем своё описание и список API, насколько это умеет
+  `ImageRenderer`: два демо на основе `List` пропускаются, а в демо **WebView** тест видит адресную
+  строку и строку состояния, но не саму `WebView`.
 - **Пример приложения**: приложение для iOS и macOS в [Examples/ShowcaseApp](Examples/ShowcaseApp),
   которое открывает любое демо по аргументу запуска.
 

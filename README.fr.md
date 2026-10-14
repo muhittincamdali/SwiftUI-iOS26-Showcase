@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-fr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-fr-light.svg" alt="SwiftUI iOS 26 Showcase: Seize démos SwiftUI exécutables des nouvelles API d'iOS 26 et de macOS 26, de Liquid Glass à Foundation Models."></picture></p>
@@ -43,9 +43,11 @@ toute la galerie ou intégrer un seul écran dans votre propre app.
   courante, et la recherche porte sur les titres, les résumés et les noms d’API.
 - **Un seul écran à la fois** : `ShowcaseDemoView(.chart3D)` place une démo dans votre propre
   navigation.
-- **Testé sur macOS et dans l’iOS Simulator** : des suites Swift Testing vérifient le catalogue,
-  les types utilitaires, que chaque démo dessine son propre contenu et que le tableau des démos
-  ci-dessous correspond au code.
+- **Testé sur macOS et dans l’iOS Simulator** : des suites Swift Testing vérifient le catalogue,
+  les types utilitaires et que le tableau des démos ci-dessous correspond au code. Un test de rendu
+  vérifie que chaque démo dessine plus que son résumé et sa liste d’API, dans la mesure où
+  `ImageRenderer` sait la dessiner : les deux démos basées sur `List` sont ignorées et, dans la démo
+  **WebView**, le test voit les barres d’adresse et d’état, mais pas la `WebView` elle-même.
 - **App d’exemple** : une app iOS et macOS dans [Examples/ShowcaseApp](Examples/ShowcaseApp), qui
   peut ouvrir n’importe quelle démo à partir d’un argument de lancement.
 

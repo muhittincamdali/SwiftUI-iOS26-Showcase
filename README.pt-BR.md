@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-pt-BR-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-pt-BR-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-pt-BR-light.svg" alt="SwiftUI iOS 26 Showcase: Dezesseis demos executáveis em SwiftUI das novas APIs do iOS 26 e do macOS 26, do Liquid Glass ao Foundation Models."></picture></p>
@@ -42,8 +42,10 @@ usá-las: você pode rodar a galeria inteira ou colocar uma única tela no seu p
 - **Uma tela de cada vez**: `ShowcaseDemoView(.chart3D)` coloca uma única demo na sua própria
   navegação.
 - **Testado no macOS e no iOS Simulator**: suítes de Swift Testing verificam o catálogo, os tipos
-  auxiliares, se cada demo desenha o próprio conteúdo e se a tabela de demos abaixo corresponde ao
-  código.
+  auxiliares e se a tabela de demos abaixo corresponde ao código. Um teste de renderização verifica
+  se cada demo desenha mais do que o resumo e a lista de APIs, até onde o `ImageRenderer` consegue
+  desenhá-la: as duas demos baseadas em `List` são ignoradas e, na demo de **WebView**, o teste vê
+  as barras de endereço e de status, mas não a `WebView` em si.
 - **App de exemplo**: um app para iOS e macOS em [Examples/ShowcaseApp](Examples/ShowcaseApp) que
   abre qualquer demo a partir de um argumento de inicialização.
 

@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ko-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ko-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ko-light.svg" alt="SwiftUI iOS 26 Showcase: iOS 26과 macOS 26의 새 API를 직접 실행해 볼 수 있는 SwiftUI 데모 16개. Liquid Glass부터 Foundation Models까지."></picture></p>
@@ -39,8 +39,10 @@ Foundation Models 프레임워크입니다. 모든 화면에는 API 옵션을 �
 - **검색 가능한 갤러리**: `ShowcaseGallery`는 현재 플랫폼에서 사용할 수 있는 데모를 나열하고, 제목과 요약,
   API 이름으로 검색할 수 있습니다.
 - **화면 하나만 사용**: `ShowcaseDemoView(.chart3D)`로 데모 하나를 자신의 내비게이션에 넣을 수 있습니다.
-- **macOS와 iOS Simulator에서 테스트**: Swift Testing 테스트 스위트가 카탈로그, 헬퍼 타입, 각 데모가 자신의
-  콘텐츠를 그리는지, 아래 데모 표가 코드와 일치하는지를 확인합니다.
+- **macOS와 iOS Simulator에서 테스트**: Swift Testing 테스트 스위트가 카탈로그, 헬퍼 타입, 아래 데모 표가
+  코드와 일치하는지를 확인합니다. 렌더링 테스트는 `ImageRenderer`가 그릴 수 있는 범위에서 각 데모가
+  요약과 API 목록보다 많은 것을 그리는지 확인합니다. `List` 기반 데모 두 개는 건너뛰며, **WebView**
+  데모에서는 주소 표시줄과 상태 표시줄은 확인하지만 `WebView` 자체는 확인하지 못합니다.
 - **예제 앱**: [Examples/ShowcaseApp](Examples/ShowcaseApp)에 있는 iOS·macOS 앱으로, 실행 인자로 원하는
   데모를 열 수 있습니다.
 

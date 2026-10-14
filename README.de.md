@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-de-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-de-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-de-light.svg" alt="SwiftUI iOS 26 Showcase: Sechzehn lauffähige SwiftUI-Demos der neuen APIs in iOS 26 und macOS 26, von Liquid Glass bis Foundation Models."></picture></p>
@@ -44,8 +44,10 @@ eigene App einbauen.
 - **Ein Bildschirm für sich**: `ShowcaseDemoView(.chart3D)` setzt eine einzelne Demo in deine
   eigene Navigation.
 - **Getestet unter macOS und im iOS Simulator**: Suites mit Swift Testing prüfen den Katalog, die
-  Hilfstypen, ob jede Demo ihren eigenen Inhalt zeichnet und ob die Demo-Tabelle unten zum Code
-  passt.
+  Hilfstypen und ob die Demo-Tabelle unten zum Code passt. Ein Rendering-Test prüft, ob jede Demo
+  mehr zeichnet als ihre Zusammenfassung und API-Liste, soweit `ImageRenderer` sie zeichnen kann:
+  Die beiden `List`-basierten Demos werden übersprungen, und in der **WebView**-Demo sieht der Test
+  die Adress- und Statusleiste, aber nicht die `WebView` selbst.
 - **Beispiel-App**: eine iOS- und macOS-App in [Examples/ShowcaseApp](Examples/ShowcaseApp), die
   jede Demo über ein Startargument öffnen kann.
 

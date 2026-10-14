@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ja-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ja-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-ja-light.svg" alt="SwiftUI iOS 26 Showcase: iOS 26 と macOS 26 の新しい API を試せる 16 個の SwiftUI デモ。Liquid Glass から Foundation Models まで。"></picture></p>
@@ -32,7 +32,7 @@ SwiftUI iOS 26 Showcase は、16 個の小さな SwiftUI 画面をまとめた S
 - **6 カテゴリ、16 個のデモ**：Liquid Glass、バーとナビゲーション、スクロールとレイアウト、テキストと Web、チャートとシンボル、Apple Intelligence。そのうち 14 個は macOS でも動作します。
 - **検索できるギャラリー**：`ShowcaseGallery` は現在のプラットフォームで使えるデモを一覧表示し、タイトル、概要、API 名を対象に検索できます。
 - **1 画面だけでも使える**：`ShowcaseDemoView(.chart3D)` で、1 つのデモを自分のナビゲーションに組み込めます。
-- **macOS と iOS Simulator でテスト**：Swift Testing のテストスイートが、カタログ、ヘルパー型、各デモが自分のコンテンツを描画していること、下のデモ一覧表がコードと一致していることを確認します。
+- **macOS と iOS Simulator でテスト**：Swift Testing のテストスイートが、カタログ、ヘルパー型、下のデモ一覧表がコードと一致していることを確認します。描画テストは、`ImageRenderer` が描画できる範囲で、各デモが概要と API 一覧以上のものを描画していることを確認します。`List` ベースの 2 つのデモは対象外で、**WebView** のデモではアドレスバーとステータスバーは確認できますが、`WebView` 自体は確認できません。
 - **サンプルアプリ**：[Examples/ShowcaseApp](Examples/ShowcaseApp) にある iOS / macOS アプリで、起動引数から任意のデモを開けます。
 
 ## クイックスタート

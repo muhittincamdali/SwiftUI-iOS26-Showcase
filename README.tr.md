@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@ce847b9e597592770359a1793d28e4402fa4f96e status=reviewed -->
+<!-- i18n-source: README.md@8ad45d70da361b090d675a7edc4b1970b393b2be status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-tr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-tr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/SwiftUI-iOS26-Showcase/main/.github/brand/banner-tr-light.svg" alt="SwiftUI iOS 26 Showcase: iOS 26 ve macOS 26 ile gelen API'ler için çalıştırılabilir 16 SwiftUI demosu: Liquid Glass'tan Foundation Models'a."></picture></p>
@@ -43,8 +43,10 @@ ekleyebilirsiniz.
 - **Tek seferde tek ekran**: `ShowcaseDemoView(.chart3D)` tek bir demoyu kendi gezinme
   yapınıza yerleştirir.
 - **macOS'ta ve iOS Simulator'da test edilir**: Swift Testing paketleri kataloğu, yardımcı
-  türleri, her demonun kendi içeriğini çizdiğini ve aşağıdaki demo tablosunun kodla eşleştiğini
-  denetler.
+  türleri ve aşağıdaki demo tablosunun kodla eşleştiğini denetler. Bir çizim testi, her demonun
+  özetinden ve API listesinden fazlasını çizdiğini `ImageRenderer`'ın çizebildiği ölçüde denetler:
+  `List` tabanlı iki demo atlanır, **WebView** demosunda ise test adres ve durum çubuklarını görür
+  ama `WebView`'un kendisini görmez.
 - **Örnek uygulama**: [Examples/ShowcaseApp](Examples/ShowcaseApp) içinde, herhangi bir demoyu
   başlatma argümanıyla açabilen bir iOS ve macOS uygulaması.
 
