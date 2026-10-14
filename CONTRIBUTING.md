@@ -41,8 +41,12 @@ Xcode project with `xcodegen generate --spec project.yml` from that folder.
 3. Return the view from `ShowcaseDemoView`.
 4. Add a row to the demo table in `README.md`. A test checks that the table matches the catalog.
    The translated READMEs are updated in a follow-up; CI marks them as behind until then.
-5. If the demo is built on a `List` instead of `DemoPage`, add it to `listDemos` in
-   `RenderingTests.swift`; `ImageRenderer` does not draw lists, so the rendering test skips them.
+5. `ImageRenderer`, which the rendering test uses, draws neither a `List` nor the contents of a
+   `ScrollView`. If the demo scrolls, use `DemoPage` or `DemoScrollView` instead of `ScrollView`,
+   so the test lays the content out without scrolling. If it is built on a `List`, add it to
+   `listDemos` in `RenderingTests.swift`; the rendering test skips those demos. If part of the
+   demo sits outside the page content (a toolbar or safe area bar), add a test that checks the
+   content itself, like `scrollEdgeEffectDrawsItsRows()`.
 6. Move logic that does not need a view (parsing, formatting, math) into a separate type and
    test it with Swift Testing.
 
