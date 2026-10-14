@@ -1,80 +1,72 @@
-# Contributing to SwiftRouter
+# Contributing
 
-First off, thank you for considering contributing to SwiftRouter! It's people like you that make SwiftRouter such a great tool.
+Thanks for helping with SwiftUI iOS 26 Showcase. Bug reports, fixes and new demos are welcome.
 
-## Code of Conduct
+The [shared contributing guide](https://github.com/muhittincamdali/.github/blob/main/CONTRIBUTING.md)
+covers branches, commit messages and README translations for all of these repositories. This
+file adds the steps that are specific to this package.
 
-This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code.
+## Before you start
 
-## How Can I Contribute?
+For a new demo, open an issue first and name the iOS 26 or macOS 26 API it covers. Each demo
+should focus on one API area, have controls for that API's main options, and run on the
+platforms listed in its metadata.
 
-### Reporting Bugs
+## Development setup
 
-Before creating bug reports, please check the existing issues as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible:
-
-- **Use a clear and descriptive title**
-- **Describe the exact steps which reproduce the problem**
-- **Provide specific examples to demonstrate the steps**
-- **Describe the behavior you observed after following the steps**
-- **Explain which behavior you expected to see instead and why**
-- **Include Swift version and OS version**
-
-### Suggesting Enhancements
-
-Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, please include:
-
-- **Use a clear and descriptive title**
-- **Provide a step-by-step description of the suggested enhancement**
-- **Provide specific examples to demonstrate the steps**
-- **Describe the current behavior and explain which behavior you expected to see instead**
-- **Explain why this enhancement would be useful**
-
-### Pull Requests
-
-1. Fork the repo and create your branch from `main`
-2. If you've added code that should be tested, add tests
-3. If you've changed APIs, update the documentation
-4. Ensure the test suite passes
-5. Make sure your code follows the existing style (SwiftLint)
-6. Issue that pull request!
-
-## Development Setup
+You need Xcode 26.1 or later (the tab bar demo uses an iOS 26.1 API).
 
 ```bash
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/SwiftRouter.git
-
-# Navigate to the project
-cd SwiftRouter
-
-# Open in Xcode
-open Package.swift
-
-# Run tests
+git clone https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
+cd SwiftUI-iOS26-Showcase
+swift build
 swift test
 ```
 
-## Style Guide
+To run the tests in the iOS Simulator:
 
-- Follow [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-- Use SwiftLint for code style consistency
-- Write meaningful commit messages following [Conventional Commits](https://www.conventionalcommits.org/)
-- Document public APIs with DocC-compatible comments
+```bash
+xcodebuild test -scheme SwiftUIiOS26Showcase -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
+```
 
-## Commit Messages
+The example app lives in `Examples/ShowcaseApp`. After changing `project.yml`, regenerate the
+Xcode project with `xcodegen generate --spec project.yml` from that folder.
 
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+## Adding a demo
 
-- `feat:` A new feature
-- `fix:` A bug fix
-- `docs:` Documentation only changes
-- `style:` Code style changes (formatting, semicolons, etc)
-- `refactor:` Code change that neither fixes a bug nor adds a feature
-- `test:` Adding missing tests
-- `chore:` Changes to the build process or auxiliary tools
+1. Add a case to `ShowcaseDemo` and fill in its metadata: title, summary, SF Symbol, category,
+   the APIs it uses and, if needed, its platforms.
+2. Add the view under `Sources/SwiftUIiOS26Showcase/Demos/<Category>/`. Most demos use
+   `DemoPage`, which adds the summary and the list of APIs.
+3. Return the view from `ShowcaseDemoView`.
+4. Add a row to the demo table in `README.md`. A test checks that the table matches the catalog.
+   The translated READMEs are updated in a follow-up; CI marks them as behind until then.
+5. `ImageRenderer`, which the rendering test uses, draws neither a `List` nor the contents of a
+   `ScrollView`. If the demo scrolls, use `DemoPage` or `DemoScrollView` instead of `ScrollView`,
+   so the test lays the content out without scrolling. If it is built on a `List`, add it to
+   `listDemos` in `RenderingTests.swift`; the rendering test skips those demos. If part of the
+   demo sits outside the page content (a toolbar or safe area bar), add a test that checks the
+   content itself, like `scrollEdgeEffectDrawsItsRows()`.
+6. Move logic that does not need a view (parsing, formatting, math) into a separate type and
+   test it with Swift Testing.
 
-Example: `feat(deeplink): add universal link support`
+## Pull requests
+
+- Keep each pull request to one change, and make sure `swift test` passes on macOS and in the
+  iOS Simulator.
+- If you change a code sample in `README.md` or in the DocC catalog, update the copy in
+  `Tests/SwiftUIiOS26ShowcaseTests/ReadmeExamplesTests.swift`.
+- Run `swiftlint` from the repository root; the configuration is in `.swiftlint.yml`.
+- If you add or change a demo screen that appears in `docs/images`, regenerate the screenshots
+  with `scripts/screenshots.sh`.
+- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/), for
+  example `feat: add a variant picker to the symbol draw demo` or `fix: keep the web view address on reload`.
+
+## Code of conduct
+
+This project follows the
+[shared code of conduct](https://github.com/muhittincamdali/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+By contributing, you agree that your contributions are licensed under the MIT License.

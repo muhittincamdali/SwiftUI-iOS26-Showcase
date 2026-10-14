@@ -1,0 +1,106 @@
+{
+  "name": "SwiftUI iOS 26 Showcase",
+  "repository": "muhittincamdali/SwiftUI-iOS26-Showcase",
+  "tagline": {
+    "en": "Sixteen runnable SwiftUI demos of the APIs new in iOS 26 and macOS 26, from Liquid Glass to Foundation Models.",
+    "tr": "iOS 26 ve macOS 26 ile gelen API'ler için çalıştırılabilir 16 SwiftUI demosu: Liquid Glass'tan Foundation Models'a.",
+    "zh-CN": "16 个可运行的 SwiftUI 演示，涵盖 iOS 26 和 macOS 26 新增的 API，从 Liquid Glass 到 Foundation Models。",
+    "ja": "iOS 26 と macOS 26 の新しい API を試せる 16 個の SwiftUI デモ。Liquid Glass から Foundation Models まで。",
+    "ko": "iOS 26과 macOS 26의 새 API를 직접 실행해 볼 수 있는 SwiftUI 데모 16개. Liquid Glass부터 Foundation Models까지.",
+    "es": "Dieciséis demos de SwiftUI de las nuevas API de iOS 26 y macOS 26, de Liquid Glass a Foundation Models.",
+    "de": "Sechzehn lauffähige SwiftUI-Demos der neuen APIs in iOS 26 und macOS 26, von Liquid Glass bis Foundation Models.",
+    "fr": "Seize démos SwiftUI exécutables des nouvelles API d'iOS 26 et de macOS 26, de Liquid Glass à Foundation Models.",
+    "pt-BR": "Dezesseis demos executáveis em SwiftUI das novas APIs do iOS 26 e do macOS 26, do Liquid Glass ao Foundation Models.",
+    "ru": "Шестнадцать готовых к запуску SwiftUI-демо новых API iOS 26 и macOS 26: от Liquid Glass до Foundation Models."
+  },
+  "tags": {
+    "en": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "tr": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "zh-CN": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "ja": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "ko": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "es": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "de": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "fr": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "pt-BR": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ],
+    "ru": [
+      "SwiftUI",
+      "iOS 26",
+      "Liquid Glass",
+      "Foundation Models"
+    ]
+  },
+  "motif": "phone",
+  "buttons": [
+    "start",
+    "docs",
+    "examples"
+  ],
+  "links": {
+    "docs": "https://muhittincamdali.github.io/SwiftUI-iOS26-Showcase/documentation/swiftuiios26showcase/",
+    "examples": "Examples/"
+  },
+  "languages": [
+    "en",
+    "tr",
+    "zh-CN",
+    "ja",
+    "ko",
+    "es",
+    "de",
+    "fr",
+    "pt-BR",
+    "ru"
+  ],
+  "docc": {
+    "targets": [
+      "SwiftUIiOS26Showcase"
+    ]
+  },
+  "socialTheme": "dark"
+}
