@@ -1,0 +1,83 @@
+# Not managed by the repository kit: the iOS Simulator tests and the example app builds that the
+# shared swift-ci.yml caller in ci.yml does not run. apply.mjs leaves this file alone.
+name: iOS tests and examples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ios-and-examples-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  ios-tests:
+    name: Tests (iOS Simulator)
+    runs-on: macos-26
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Toolchain
+        run: xcodebuild -version
+
+      - name: Pick an iPhone simulator with iOS 26 or later
+        id: simulator
+        run: |
+          udid=$(xcrun simctl list devices available --json \
+            | jq -r '[.devices | to_entries[] | select(.key | test("SimRuntime\\.iOS-(2[6-9]|[3-9][0-9])-")) | .value[] | select(.name | startswith("iPhone"))] | last | .udid')
+          if [ -z "$udid" ] || [ "$udid" = "null" ]; then
+            echo "::error::No iPhone simulator with iOS 26 or later on this image"
+            exit 1
+          fi
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+
+      - name: Test
+        env:
+          UDID: ${{ steps.simulator.outputs.udid }}
+        run: |
+          set -o pipefail
+          xcodebuild test -scheme SwiftUIiOS26Showcase -destination "id=$UDID" \
+            -skipPackagePluginValidation -skipMacroValidation CODE_SIGNING_ALLOWED=NO -quiet
+
+  example-app:
+    name: Example app (${{ matrix.platform }})
+    runs-on: macos-26
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: iOS
+            destination: generic/platform=iOS Simulator
+          - platform: macOS
+            destination: platform=macOS
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Toolchain
+        run: xcodebuild -version
+
+      - name: Build
+        env:
+          DESTINATION: ${{ matrix.destination }}
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project Examples/ShowcaseApp/ShowcaseApp.xcodeproj \
+            -scheme ShowcaseApp \
+            -destination "$DESTINATION" \
+            -skipPackagePluginValidation -skipMacroValidation \
+            CODE_SIGNING_ALLOWED=NO -quiet
