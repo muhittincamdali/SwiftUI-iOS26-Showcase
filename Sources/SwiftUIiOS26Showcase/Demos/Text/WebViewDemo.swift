@@ -13,6 +13,8 @@ struct WebViewDemo: View {
             addressBar
             WebView(page)
             statusBar
+            APIList(demo: .webView)
+                .padding([.horizontal, .bottom])
         }
         .navigationSubtitle(page.title.isEmpty ? "Loading" : page.title)
         .onAppear {
