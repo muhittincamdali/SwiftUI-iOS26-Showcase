@@ -1,441 +1,179 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Swift-6.0-FA7343?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 6.0"/>
-  <img src="https://img.shields.io/badge/Platform-iOS%20|%20macOS%20|%20visionOS-007AFF?style=for-the-badge&logo=apple&logoColor=white" alt="Platform"/>
-  <img src="https://img.shields.io/badge/Standard-Unified%20Core-5856D6?style=for-the-badge" alt="Standard"/>
-</p>
+# SwiftUI iOS 26 Showcase
 
----
+[![CI](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/actions/workflows/ci.yml/badge.svg)](https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/github/license/muhittincamdali/SwiftUI-iOS26-Showcase)](LICENSE)
 
-## 🚀 Killer Feature: Comprehensive App Gallery
-Don't just read about features—experience them. This repository includes 10 fully functional mini-apps demonstrating the absolute bleeding-edge of iOS 26 UI/UX patterns.
-> **🛡️ PART OF THE 2026 UNIFIED CORE**
-> This repository is a verified component of 'The Endless March' initiative. Purified for Swift 6, zero-dependency, and engineered for maximum hardware saturation.
-> 
-> *Flagship Engines:* [SwiftNetwork](https://github.com/muhittincamdali/SwiftNetwork) | [SwiftAI](https://github.com/muhittincamdali/SwiftAI) | [LiquidGlassKit](https://github.com/muhittincamdali/LiquidGlassKit)
+Sixteen small SwiftUI screens, each built around one group of APIs that are new in iOS 26 and
+macOS 26: Liquid Glass, the new bar and scroll modifiers, rich text editing, the native web view,
+3D charts, SF Symbol draw effects, the `@Animatable` macro and the on-device Foundation Models
+framework. Every screen has controls to try the API's options and lists the SDK symbols it uses.
 
----
+The demos ship as a Swift package with a searchable gallery, so you can run them in the example
+app or drop a single screen into your own project.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/iOS-26-blue?style=for-the-badge&logo=apple" alt="iOS 26"/>
-  <img src="https://img.shields.io/badge/Swift-6.2-orange?style=for-the-badge&logo=swift" alt="Swift 6.2"/>
-  <img src="https://img.shields.io/badge/Xcode-26-blue?style=for-the-badge&logo=xcode" alt="Xcode 26"/>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License"/>
-</p>
+| Gallery                                   | Liquid Glass                                 | Morphing glass                                   | 3D chart                             |
+| ----------------------------------------- | -------------------------------------------- | ------------------------------------------------ | ------------------------------------ |
+| ![Gallery](docs/images/gallery-light.png) | ![Glass effect](docs/images/glassEffect.png) | ![Morphing glass](docs/images/glassMorphing.png) | ![3D chart](docs/images/chart3D.png) |
 
-<h1 align="center">🍎 SwiftUI iOS 26 Showcase</h1>
+<sub>Captured from the example app on the iOS 26.5 simulator with `scripts/screenshots.sh`.
+More: [gallery in dark mode](docs/images/gallery-dark.png),
+[glass buttons](docs/images/glassButtons.png), [toolbar spacer](docs/images/toolbarSpacer.png),
+[scroll edge effect](docs/images/scrollEdgeEffect.png),
+[background extension](docs/images/backgroundExtension.png),
+[rich text editor](docs/images/richTextEditor.png), [symbol draw](docs/images/symbolDraw.png),
+[@Animatable](docs/images/animatableMacro.png),
+[Foundation Models](docs/images/foundationModels.png).</sub>
 
-<p align="center">
-  <strong>The most comprehensive iOS 26 feature showcase on GitHub</strong><br>
-  <em>60+ production-ready examples • Liquid Glass • WebView • 3D Charts • @Animatable & more</em>
-</p>
+## Demos
 
-<p align="center">
-  <a href="#-whats-new-in-ios-26">What's New</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-code-examples">Code Examples</a> •
-  <a href="#-migration-guide">Migration</a>
-</p>
+| Category                    | Demo                         | APIs                                                                                            |
+| --------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------- |
+| Liquid Glass                | Glass Effect                 | `glassEffect(_:in:)`, `Glass.regular`, `Glass.clear`, `Glass.tint(_:)`, `Glass.interactive(_:)` |
+| Liquid Glass                | Morphing Glass               | `GlassEffectContainer`, `glassEffectID(_:in:)`, `glassEffectUnion(id:namespace:)`               |
+| Liquid Glass                | Glass Button Styles          | `.buttonStyle(.glass)`, `.buttonStyle(.glassProminent)`                                         |
+| Bars & Navigation           | Tab Bar Minimize & Accessory | `tabBarMinimizeBehavior(_:)`, `tabViewBottomAccessory(content:)`, `Tab(role: .search)` (iOS)    |
+| Bars & Navigation           | Toolbar Spacer               | `ToolbarSpacer(_:placement:)`, `sharedBackgroundVisibility(_:)`                                 |
+| Bars & Navigation           | Navigation Subtitle          | `navigationSubtitle(_:)`                                                                        |
+| Bars & Navigation           | Section Index Labels         | `sectionIndexLabel(_:)`, `listSectionIndexVisibility(_:)` (iOS)                                 |
+| Scrolling & Layout          | Scroll Edge Effect           | `scrollEdgeEffectStyle(_:for:)`, `safeAreaBar(edge:content:)`                                   |
+| Scrolling & Layout          | Background Extension Effect  | `backgroundExtensionEffect(isEnabled:)`                                                         |
+| Scrolling & Layout          | Label Icon Spacing           | `labelIconToTitleSpacing(_:)`                                                                   |
+| Text & Web                  | Rich Text Editor             | `TextEditor(text:selection:)`, `AttributedTextSelection`, `transformAttributes(in:body:)`       |
+| Text & Web                  | WebView & WebPage            | `WebView(_:)`, `WebPage`, `WebPage.load(_:)`                                                    |
+| Charts, Symbols & Animation | 3D Charts                    | `Chart3D`, `SurfacePlot`, `chart3DPose(_:)`                                                     |
+| Charts, Symbols & Animation | Symbol Draw Effects          | `symbolEffect(_:isActive:)`, `DrawOffSymbolEffect`, `symbolVariableValueMode(.draw)`            |
+| Charts, Symbols & Animation | @Animatable Macro            | `@Animatable`, `@AnimatableIgnored`                                                             |
+| Apple Intelligence          | On-Device Language Model     | `SystemLanguageModel`, `LanguageModelSession`, `@Generable`, `@Guide`                           |
 
----
+The two demos marked (iOS) use APIs that do not exist on macOS, so the macOS gallery lists the
+other fourteen.
 
-## 🆕 What's New in iOS 26
+## Requirements
 
-iOS 26 introduces **Liquid Glass**, a revolutionary design system, along with dozens of new SwiftUI APIs. This showcase provides working examples for every major feature.
+- Xcode 26 or later (Swift 6.2 tools)
+- iOS 26 or macOS 26
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        iOS 26 Feature Map                           │
-├─────────────────────────────────────────────────────────────────────┤
-│  🔮 Liquid Glass          │  📱 SwiftUI Views        │  🎨 Design  │
-│  ├─ glassEffect()         │  ├─ WebView (Native!)    │  ├─ Buttons │
-│  ├─ GlassEffectContainer  │  ├─ Rich TextEditor      │  ├─ Sliders │
-│  ├─ glassEffectID()       │  ├─ Chart3D              │  ├─ Toggles │
-│  └─ Interactive Glass     │  └─ SectionIndexLabel    │  └─ Menus   │
-├─────────────────────────────────────────────────────────────────────┤
-│  🧭 Navigation            │  ⚡ Performance          │  🤖 AI      │
-│  ├─ TabView Minimize      │  ├─ @Animatable Macro    │  ├─ Found.  │
-│  ├─ Navigation Subtitle   │  ├─ Sheet Morphing       │  │  Models  │
-│  ├─ Background Extension  │  └─ Symbol Draw Effect   │  └─ On-Dev. │
-│  └─ Scroll Edge Effect    │                          │     AI      │
-└─────────────────────────────────────────────────────────────────────┘
-```
+## Installation
 
-## ✨ Features
-
-### 🔮 Liquid Glass
-The heart of iOS 26's new design language.
-
-| Feature | Description | Status |
-|---------|-------------|--------|
-| `glassEffect()` | Apply translucent glass to any view | ✅ |
-| `GlassEffectContainer` | Group glass elements for consistent sampling | ✅ |
-| `glassEffectID()` | Morphing transitions between glass elements | ✅ |
-| Interactive Glass | Scale, bounce, shimmer on interaction | ✅ |
-| Tinted Glass | Apply semantic colors to glass | ✅ |
-
-### 📱 New SwiftUI Views
-
-| Feature | iOS 17 | iOS 26 |
-|---------|--------|--------|
-| **WebView** | ❌ UIViewRepresentable | ✅ Native SwiftUI |
-| **Rich TextEditor** | ❌ Plain text only | ✅ AttributedString |
-| **3D Charts** | ❌ Not available | ✅ Chart3D, SurfacePlot |
-| **Section Index** | ❌ UIKit wrapper | ✅ sectionIndexLabel |
-| **Label Spacing** | ❌ Manual HStack | ✅ labelReservedIconWidth |
-
-### 🧭 Navigation Updates
-
-| Feature | Description |
-|---------|-------------|
-| TabView Minimize | Tab bar collapses on scroll |
-| Bottom Accessory | Add views above tab bar |
-| Navigation Subtitle | Secondary text under title |
-| Background Extension | Extend images beyond safe area |
-| Scroll Edge Effect | Blur/fade under toolbars |
-
-### ⚡ Animation & Performance
-
-| Feature | Benefit |
-|---------|---------|
-| `@Animatable` Macro | No more manual animatableData |
-| Sheet Morphing | Sheets animate from buttons |
-| SF Symbol Draw | Hand-drawn animation effect |
-| Variable + Draw | Combined symbol effects |
-
-## 🚀 Installation
-
-### Requirements
-
-| Requirement | Version |
-|-------------|---------|
-| iOS | 26.0+ |
-| macOS | Tahoe 26+ |
-| Xcode | 26+ |
-| Swift | 6.2+ |
-
-### Swift Package Manager
+Add the package in Xcode with File > Add Package Dependencies, using
+`https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase`, or in `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git", from: "2.0.0")
+    .package(url: "https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git", branch: "main")
+],
+targets: [
+    .target(name: "MyApp", dependencies: [
+        .product(name: "SwiftUIiOS26Showcase", package: "SwiftUI-iOS26-Showcase")
+    ])
 ]
 ```
 
-### Clone & Run
+## Usage
+
+### The whole gallery
+
+`ShowcaseGallery` is a navigation stack with a searchable list of every demo available on the
+current platform:
+
+```swift
+import SwiftUI
+import SwiftUIiOS26Showcase
+
+@main
+struct DemoApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ShowcaseGallery()
+        }
+    }
+}
+```
+
+`ShowcaseGallery(initialDemo: .chart3D)` opens a demo on appear, for example from a deep link.
+
+### One demo
+
+`ShowcaseDemoView` shows a single demo and sets its navigation title:
+
+```swift
+struct ChartScreen: View {
+    var body: some View {
+        NavigationStack {
+            ShowcaseDemoView(.chart3D)
+        }
+    }
+}
+```
+
+### The catalog
+
+`ShowcaseCatalog` holds the list, search and grouping logic behind the gallery. A query matches a
+demo when every word appears in its title, summary or API list, ignoring case and diacritics:
+
+```swift
+let catalog = ShowcaseCatalog(platform: .iOS)
+let matches = catalog.demos(matching: "glass button")   // [.glassButtons]
+let sections = catalog.sections(matching: "symbol")     // one section: Charts, Symbols & Animation
+let demo = catalog.demo(withID: "webView")              // .webView
+```
+
+### Helpers used by the demos
+
+The logic behind some demos is public and covered by tests:
+
+```swift
+// What the web view demo accepts in its address bar.
+WebAddress.url(from: "swift.org")              // https://swift.org
+WebAddress.url(from: "javascript:alert(1)")    // nil
+
+// The heights plotted by the 3D chart, always in -1...1.
+SurfaceFunction.peak.height(x: 0, z: 0)        // 1.0
+```
+
+`RichTextFormatter` toggles bold, italic, underline and strikethrough on the selected part of an
+`AttributedString`, the way the rich text demo's buttons do.
+
+## Example app
+
+`Examples/ShowcaseApp` is an iOS and macOS app that shows `ShowcaseGallery`. Open
+`Examples/ShowcaseApp/ShowcaseApp.xcodeproj` and run the `ShowcaseApp` scheme. The project is
+generated with [XcodeGen](https://github.com/yonaskolb/XcodeGen) from `project.yml`.
+
+Pass `-demo <id>` as a launch argument to open a demo directly, for example `-demo glassEffect`.
+`scripts/screenshots.sh` uses this to capture the images in `docs/images`.
+
+## Notes
+
+- **Foundation Models** needs Apple Intelligence. On a device without it, with it turned off, or
+  while the model is downloading, the demo says which of these applies and disables the button that sends the prompt.
+- **Tab bar accessory**: `tabViewBottomAccessory(isEnabled:content:)` needs iOS 26.1. On 26.1 and
+  later the demo uses it; on 26.0 it adds or leaves out `tabViewBottomAccessory(content:)`.
+- **WebView** loads `https://www.swift.org` when it appears, so it needs a network connection.
+  The address bar only accepts `http` and `https` addresses.
+
+## Testing
 
 ```bash
-git clone https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git
-cd SwiftUI-iOS26-Showcase
-open Package.swift
-# Select iOS 26 Simulator and Run
+swift test
 ```
 
-## 💻 Code Examples
+The tests use Swift Testing and run on macOS and in the iOS Simulator (CI runs both). They cover
+catalog search and grouping, demo metadata, address validation, the chart's height functions, the
+`@Animatable` wave shape, the rich text formatter, rendering every demo screen with
+`ImageRenderer`, and the code samples in this README, which are compiled as part of the test
+target.
 
-### Liquid Glass Effect
+To build the documentation catalog:
 
-```swift
-// Basic glass effect
-Text("Hello, Liquid Glass!")
-    .padding()
-    .glassEffect()
-
-// Custom shape
-Button("Action") { }
-    .glassEffect(.rect(cornerRadius: 12))
-
-// Interactive glass (for controls)
-Button("Interactive") { }
-    .glassEffect(.capsule, isInteractive: true)
-
-// Tinted glass
-Image(systemName: "star.fill")
-    .glassEffect()
-    .tint(.yellow)
+```bash
+xcodebuild docbuild -scheme SwiftUIiOS26Showcase -destination 'generic/platform=iOS Simulator'
 ```
 
-### Native WebView
+## Contributing
 
-```swift
-// iOS 26: Native SwiftUI WebView - no wrappers!
-WebView(url: URL(string: "https://apple.com")!)
-    .webViewNavigationDelegate(
-        didStartLoading: { isLoading = true },
-        didFinishLoading: { isLoading = false }
-    )
+See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY.md).
 
-// In-app browser via openURL
-@Environment(\.openURL) var openURL
+## License
 
-Button("Open Link") {
-    openURL(url, inApp: true) // NEW: inApp parameter
-}
-```
-
-### Rich Text Editor
-
-```swift
-@State private var attributedText = AttributedString()
-
-TextEditor(text: $attributedText)
-    .textEditorStyle(.richText)
-    .richTextToolbar(.visible)
-```
-
-### 3D Charts
-
-```swift
-Chart3D {
-    SurfacePlot(data: surfaceData) { point in
-        SurfaceMark(
-            x: .value("X", point.x),
-            y: .value("Y", point.y),
-            z: .value("Z", point.z)
-        )
-    }
-}
-.chart3DRotation(x: .degrees(15), y: .degrees(45))
-```
-
-### TabView Minimize
-
-```swift
-TabView {
-    Tab("Home", systemImage: "house") {
-        HomeView()
-    }
-    Tab("Search", systemImage: "magnifyingglass") {
-        SearchView()
-    }
-}
-.tabBarMinimizeBehavior(.onScrollDown)
-.tabViewBottomAccessory {
-    NowPlayingBar()
-}
-```
-
-### @Animatable Macro
-
-```swift
-// iOS 17: Manual animatableData 😫
-struct OldWay: Shape {
-    var progress: Double
-    var animatableData: Double {
-        get { progress }
-        set { progress = newValue }
-    }
-    // ...
-}
-
-// iOS 26: Just add @Animatable! 🎉
-@Animatable
-struct NewWay: Shape {
-    var progress: Double
-    // That's it! No animatableData needed
-}
-```
-
-### Section Index Labels
-
-```swift
-List {
-    ForEach(sortedSections, id: \.self) { letter in
-        Section(letter) {
-            // Content
-        }
-        .sectionIndexLabel(Text(letter))
-    }
-}
-.listSectionIndexVisibility(.automatic)
-```
-
-### Label Spacing
-
-```swift
-// Align labels with different icon widths
-Label("Settings", systemImage: "gearshape")
-    .labelReservedIconWidth(28)
-    .labelIconToTitleSpacing(12)
-```
-
-## 📖 Migration Guide
-
-### From iOS 17 to iOS 26
-
-<details>
-<summary><strong>WebView Migration</strong></summary>
-
-```swift
-// ❌ iOS 17: UIViewRepresentable wrapper
-struct WebView: UIViewRepresentable {
-    let url: URL
-    func makeUIView(context: Context) -> WKWebView { ... }
-    func updateUIView(_ uiView: WKWebView, context: Context) { ... }
-}
-
-// ✅ iOS 26: Native SwiftUI
-WebView(url: URL(string: "https://apple.com")!)
-```
-
-</details>
-
-<details>
-<summary><strong>Rich Text Migration</strong></summary>
-
-```swift
-// ❌ iOS 17: Plain text only
-TextEditor(text: $plainText)
-
-// ✅ iOS 26: Rich text with AttributedString
-TextEditor(text: $attributedText)
-    .textEditorStyle(.richText)
-```
-
-</details>
-
-<details>
-<summary><strong>Animation Migration</strong></summary>
-
-```swift
-// ❌ iOS 17: Manual animatableData
-struct ProgressRing: Shape {
-    var progress: Double
-    var animatableData: Double {
-        get { progress }
-        set { progress = newValue }
-    }
-}
-
-// ✅ iOS 26: @Animatable macro
-@Animatable
-struct ProgressRing: Shape {
-    var progress: Double
-}
-```
-
-</details>
-
-<details>
-<summary><strong>TabView Migration</strong></summary>
-
-```swift
-// ❌ iOS 17: Static tab bar
-TabView { ... }
-
-// ✅ iOS 26: Minimizing tab bar with accessory
-TabView { ... }
-    .tabBarMinimizeBehavior(.onScrollDown)
-    .tabViewBottomAccessory { MiniPlayer() }
-```
-
-</details>
-
-## 📂 Project Structure
-
-```
-SwiftUI-iOS26-Showcase/
-├── Sources/
-│   └── SwiftUIiOS26Showcase/
-│       ├── App/
-│       │   ├── ShowcaseApp.swift
-│       │   └── ContentView.swift
-│       ├── iOS26Features/
-│       │   ├── WebViewDemo.swift
-│       │   ├── RichTextEditorDemo.swift
-│       │   ├── Chart3DDemo.swift
-│       │   ├── AnimatableMacroDemo.swift
-│       │   ├── TabViewMinimizeDemo.swift
-│       │   ├── SectionIndexLabelsDemo.swift
-│       │   ├── BackgroundExtensionEffectDemo.swift
-│       │   ├── ToolbarSpacerDemo.swift
-│       │   ├── ScrollEdgeEffectDemo.swift
-│       │   ├── LabelSpacingDemo.swift
-│       │   ├── SFSymbolsDrawDemo.swift
-│       │   ├── GlassEffectIDDemo.swift
-│       │   └── NavigationSubtitleDemo.swift
-│       ├── LiquidGlass/
-│       ├── AI/
-│       └── Apps/
-├── Documentation/
-├── Tests/
-└── Package.swift
-```
-
-## 🎯 Feature Checklist
-
-### Liquid Glass
-- [x] Basic glass effect
-- [x] Glass containers
-- [x] Glass morphing transitions
-- [x] Interactive glass
-- [x] Tinted glass
-
-### SwiftUI Views
-- [x] Native WebView
-- [x] Rich TextEditor
-- [x] 3D Charts
-- [x] Section Index Labels
-- [x] Label spacing APIs
-
-### Navigation
-- [x] TabView minimize
-- [x] Bottom accessory
-- [x] Navigation subtitle
-- [x] Background extension
-- [x] Scroll edge effect
-
-### Controls
-- [x] Toolbar spacer
-- [x] Toolbar badges
-- [x] New button styles
-- [x] Slider tick marks
-- [x] SF Symbols draw effect
-
-### Animations
-- [x] @Animatable macro
-- [x] Sheet morphing
-- [x] Symbol effects
-- [x] Variable value + draw
-
-## 📚 Resources
-
-- [WWDC 2025 - What's New in SwiftUI](https://developer.apple.com/videos/play/wwdc2025/256)
-- [WWDC 2025 - Build with Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/323)
-- [Apple Developer Documentation](https://developer.apple.com/documentation/swiftui)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md).
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-<p align="center">
-  <strong>Made with ❤️ by Muhittin Camdali</strong>
-</p>
-
-<p align="center">
-  <a href="https://github.com/muhittincamdali">
-    <img src="https://img.shields.io/badge/GitHub-muhittincamdali-181717?style=flat-square&logo=github" alt="GitHub"/>
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://star-history.com/#muhittincamdali/SwiftUI-iOS26-Showcase&Date">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-iOS26-Showcase&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-iOS26-Showcase&type=Date" />
-      <img alt="Star History" src="https://api.star-history.com/svg?repos=muhittincamdali/SwiftUI-iOS26-Showcase&type=Date" />
-    </picture>
-  </a>
-</p>
+MIT. See [LICENSE](LICENSE).
