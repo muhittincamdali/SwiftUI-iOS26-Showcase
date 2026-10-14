@@ -28,8 +28,10 @@ documents had been copied from another project.
 - Swift Testing suites that run on macOS and in the iOS Simulator. They cover catalog search
   and metadata, the public helpers, compiled README and DocC examples, a check that the README
   demo table matches the catalog, and a rendering test that every demo draws more than its
-  summary and API list (the two `List`-based demos are not rendered, because `ImageRenderer`
-  does not draw lists).
+  summary and API list. `ImageRenderer` does not draw lists or `WebView`, so the two
+  `List`-based demos are not rendered and the web view demo is checked only through its address
+  and status bars. A separate test checks that the scroll edge demo draws its rows, because its
+  picker sits outside the page content.
 - An iOS and macOS example app (`Examples/ShowcaseApp`, created with XcodeGen), a screenshot
   script and simulator screenshots.
 - A DocC catalog with an overview and two articles: getting started, and building your own demo
