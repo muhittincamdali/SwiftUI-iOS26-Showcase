@@ -14,14 +14,17 @@ struct ScrollEdgeEffectDemo: View {
         }
     }
 
+    /// How many rows the page shows, enough to scroll under the bar on any screen.
+    static let rowCount = 30
+
     @State private var style: Style = .soft
 
     var body: some View {
-        ScrollView {
+        DemoScrollView {
             LazyVStack(alignment: .leading, spacing: 12) {
                 Text(ShowcaseDemo.scrollEdgeEffect.summary)
                     .foregroundStyle(.secondary)
-                ForEach(0..<30) { index in
+                ForEach(0..<Self.rowCount, id: \.self) { index in
                     row(index)
                 }
                 APIList(demo: .scrollEdgeEffect)
@@ -42,7 +45,7 @@ struct ScrollEdgeEffectDemo: View {
     private func row(_ index: Int) -> some View {
         HStack {
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(hue: Double(index) / 30, saturation: 0.7, brightness: 0.9).gradient)
+                .fill(Color(hue: Double(index) / Double(Self.rowCount), saturation: 0.7, brightness: 0.9).gradient)
                 .frame(width: 44, height: 44)
             VStack(alignment: .leading) {
                 Text("Row \(index + 1)")
