@@ -4,11 +4,18 @@ Add the package, then show the whole gallery or a single demo.
 
 ## Add the package
 
-The package needs Xcode 26 or later and runs on iOS 26 and macOS 26.
+The package needs Xcode 26.1 or later and runs on iOS 26 and macOS 26.
 
-In Xcode, choose File > Add Package Dependencies and enter
-`https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase`. In a
-`Package.swift` manifest, add:
+1. In Xcode, open your app project and choose
+   **File > Add Package Dependencies…**.
+2. Paste `https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git`
+   into the search field at the top right.
+3. Set **Dependency Rule** to **Branch** and enter `main`. The 1.0.0
+   release predates the demos described here.
+4. Click **Add Package**, choose your app target in the
+   **Add to Target** column, and click **Add Package** again.
+
+In a `Package.swift` manifest, add:
 
 ```swift
 .package(url: "https://github.com/muhittincamdali/SwiftUI-iOS26-Showcase.git", branch: "main")
@@ -34,12 +41,16 @@ struct DemoApp: App {
 }
 ```
 
+Run the app on an iPhone simulator with iOS 26 or on a Mac with
+macOS 26. The first screen lists the demos by category and has a search
+field.
+
 Pass `initialDemo` to open a demo right away, for example when handling a
 deep link.
 
 ## Show one demo
 
-``ShowcaseDemoView`` renders a single demo and sets its navigation title.
+``ShowcaseDemoView`` shows a single demo and sets its navigation title.
 Put it inside your own `NavigationStack`:
 
 ```swift
@@ -62,6 +73,9 @@ let catalog = ShowcaseCatalog()
 let matches = catalog.demos(matching: "glass button")
 // [.glassButtons]
 ```
+
+To build your own list of demos instead of using the gallery, see
+<doc:BuildingADemoBrowser>.
 
 ## Foundation Models
 

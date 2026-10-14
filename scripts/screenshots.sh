@@ -5,7 +5,7 @@
 #
 # Without a UDID the script creates (or reuses) a simulator named
 # "SwiftUI iOS 26 Showcase" using the newest installed iOS runtime.
-# Requires Xcode 26 or later. Images are written to docs/images/.
+# Requires Xcode 26.1 or later. Images are written to docs/images/.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
