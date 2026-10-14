@@ -4,7 +4,7 @@ struct BackgroundExtensionDemo: View {
     @State private var isEnabled = true
 
     var body: some View {
-        ScrollView {
+        DemoScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 hero
                 VStack(alignment: .leading, spacing: 24) {

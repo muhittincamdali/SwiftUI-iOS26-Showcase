@@ -56,13 +56,33 @@ struct APIList: View {
     }
 }
 
+extension EnvironmentValues {
+    /// Whether demo pages scroll. The rendering tests turn this off, because
+    /// `ImageRenderer` does not draw the contents of a `ScrollView`.
+    @Entry var demoPagesScroll = true
+}
+
+/// A vertical scroll view, or just its content when `demoPagesScroll` is off.
+struct DemoScrollView<Content: View>: View {
+    @Environment(\.demoPagesScroll) private var scrolls
+    @ViewBuilder let content: Content
+
+    var body: some View {
+        if scrolls {
+            ScrollView { content }
+        } else {
+            content
+        }
+    }
+}
+
 /// The standard scrolling layout used by most demo pages.
 struct DemoPage<Content: View>: View {
     let demo: ShowcaseDemo
     @ViewBuilder let content: Content
 
     var body: some View {
-        ScrollView {
+        DemoScrollView {
             VStack(alignment: .leading, spacing: 28) {
                 Text(demo.summary)
                     .foregroundStyle(.secondary)
