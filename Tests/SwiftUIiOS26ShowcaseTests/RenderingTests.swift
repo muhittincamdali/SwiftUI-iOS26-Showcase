@@ -59,6 +59,15 @@ struct RenderingTests {
         #expect(page.drawnPixels > bare.drawnPixels)
     }
 
+    /// The scroll edge demo's picker sits in a bar outside the page content, so the
+    /// check above would pass on the picker alone. Each row is at least 44 points tall.
+    @Test func scrollEdgeEffectDrawsItsRows() throws {
+        let page = try render(ScrollEdgeEffectDemo())
+        let bare = try render(DemoPage(demo: .scrollEdgeEffect) { EmptyView() })
+        let rowsHeight = ScrollEdgeEffectDemo.rowCount * 44
+        #expect(page.height >= bare.height + rowsHeight)
+    }
+
     #if os(macOS)
     @Test(arguments: [ShowcaseDemo.tabBarMinimize, .sectionIndex])
     func iOSOnlyDemoShowsAPlaceholderOnMacOS(demo: ShowcaseDemo) throws {
